@@ -1,0 +1,39 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+  var arr=userInput[0];
+  var ae=userInput[1].split(" ");
+  var large;
+  var small;
+large=Math.max.apply(0,ae);
+small=Math.min.apply(0,ae);
+var il;
+var is;
+for(let i=0;i<arr;i++)
+{
+    if(ae[i]==large)
+      {
+          il=i;
+      }
+    if(ae[i]==small)
+    {
+        is=i;
+    }
+}
+console.log(il-is);
+  
+  //end-here
+});
